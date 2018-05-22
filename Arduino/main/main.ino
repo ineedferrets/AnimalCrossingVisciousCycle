@@ -9,16 +9,16 @@ const int angBetweenSpokes = 15;
 const int velocityRefreshRate = 200;
 
 // Boundary between darkness and exposure to LED.
-const int lightBurstBoundary = 100;
+const int lightBurstBoundary = 50;
 
 // Left wheel counter of bursts.
 int leftCounter = 0;
 
 // Left wheel LRD A pin.
-int leftAPin = A0;
+const int leftAPin = A0;
 
 // Left wheel LRD B pin.
-int leftBPin = A1;
+const int leftBPin = A1;
 
 // Left wheel LRD A state.
 bool leftALastBurstState;
@@ -31,13 +31,13 @@ unsigned long currentTime;
 
 // Method declarations.
 int calculateAngulerVelocity(int counter);
-int checkWheelChanges(int pinA, bool lastBurstAState, int pinB);
+int checkWheelChanges(int pinA, bool &lastBurstAState, int pinB);
 bool checkBurstState(int pin);
 
 void setup() {
   pinMode(leftAPin, INPUT);
   pinMode(leftBPin, INPUT);
-
+  
   leftALastBurstState = checkBurstState(leftAPin);
 
   currentTime = millis();
@@ -54,8 +54,11 @@ void loop() {
   // If refresh time, calculate the amount of angle turned in deg/ms.
   if (currentTime >= (loopTime + velocityRefreshRate)) {
     int leftOutput = calculateAngularVelocity(leftCounter);
+    Serial.print("Counter: ");
+    Serial.println(leftCounter);
+    Serial.print("Velocity: ");
+    Serial.println(leftOutput);
     leftCounter = 0;
-    Serial.print(leftOutput);
     loopTime = currentTime;
   } else {
     // Update the counter for bursts.
@@ -65,10 +68,9 @@ void loop() {
   int leftAValue = analogRead(leftAPin);
   int leftBValue = analogRead(leftBPin);
   
-  Serial.print(leftAValue);
+  /*Serial.print(leftAValue);
   Serial.print(" ");
-  Serial.println(leftBValue);
-   
+  Serial.println(leftBValue);*/
 }
 
 // Calculate the angular velocity from the time taken.
@@ -78,9 +80,11 @@ int calculateAngularVelocity(int counter) {
 }
 
 // Return adjustment to wheel counter.
-int checkWheelChanges(int pinA, bool lastABurstState, int pinB)
+int checkWheelChanges(int pinA, bool &lastABurstState, int pinB)
 {
-  if (checkBurstState(pinA) != lastABurstState) {
+  bool aBurstState = checkBurstState(pinA);
+  if (aBurstState != lastABurstState) {
+    lastABurstState = aBurstState;
     if (checkBurstState(pinB) != lastABurstState) {
 		  return 1;
     } else {
