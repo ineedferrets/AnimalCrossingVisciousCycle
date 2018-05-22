@@ -7,7 +7,7 @@ Developed by Joseph Hesketh and Cristiana Pacheco
 Here are things to do before hand in:
 - Merge CP and JH branches.
 - Parse the velocity sent by the wheel.
-- Write the 'README.md' file.
+- Write the `README.md` file.
 - Record video of prototype.
 
 Here are things to do on the project in general:
