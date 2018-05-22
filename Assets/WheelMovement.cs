@@ -7,18 +7,26 @@ public class WheelMovement : MonoBehaviour
     public Transform[] wheels;
 
     public Rigidbody leftWheelRigidBody;
-    public float maximumAngularVelocity = 5f;
+    public Rigidbody rightWheelRigidBody;
+    public float maximumVelocity = 200.0f;
+    private float leftWheelController;
+    private float rightWheelController;
+
+    void Start()
+    {
+        leftWheelController = 0;
+    }
 
 
     void FixedUpdate()
     {
-        Debug.Log(gameObject.GetComponent<WheelCollider>().rpm);
-        
-        wheels[0].Rotate(gameObject.GetComponent<WheelCollider>().rpm, 0, 0);
-        //wheels[1].Rotate(getCollider(1).rpm, 0, 0);
 
-        leftWheelRigidBody.angularVelocity = (transform.right * maximumAngularVelocity);
-        Debug.DrawRay(leftWheelRigidBody.transform.position, transform.right, Color.red);
+        leftWheelController = Input.GetAxis("Vertical") * Time.deltaTime * 300.0f;
+        rightWheelController = Input.GetAxis("Vertical2") * Time.deltaTime * 300.0f;
+
+
+        leftWheelRigidBody.angularVelocity = (transform.right * leftWheelController);
+        rightWheelRigidBody.angularVelocity = (transform.right * rightWheelController);
     }
 
 }
