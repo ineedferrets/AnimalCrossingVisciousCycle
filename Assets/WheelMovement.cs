@@ -20,13 +20,14 @@ public class WheelMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-
         leftWheelController = Input.GetAxis("Vertical") * Time.deltaTime * 300.0f;
         rightWheelController = Input.GetAxis("Vertical2") * Time.deltaTime * 300.0f;
 
+        leftWheelRigidBody.AddForce(transform.forward * leftWheelController);
+        rightWheelRigidBody.AddForce(transform.forward * rightWheelController);
 
-        leftWheelRigidBody.angularVelocity = (transform.right * leftWheelController);
-        rightWheelRigidBody.angularVelocity = (transform.right * rightWheelController);
+        /*leftWheelRigidBody.angularVelocity = (transform.right * leftWheelController);
+        rightWheelRigidBody.angularVelocity = (transform.right * rightWheelController);*/
     }
 
 }
