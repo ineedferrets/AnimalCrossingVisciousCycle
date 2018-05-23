@@ -1630,7 +1630,6 @@ Transform:
 --- !u!1001 &1829456466
 Prefab:
   m_ObjectHideFlags: 0
-<<<<<<< HEAD
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 2069849998}
@@ -1674,24 +1673,9 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f48f1a27c7f82ce4d8fcc66f66945006, type: 3}
   m_IsPrefabParent: 0
---- !u!4 &1829456467 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400010, guid: f48f1a27c7f82ce4d8fcc66f66945006, type: 3}
   m_PrefabInternal: {fileID: 1829456466}
-=======
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1029947245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a6a08f0b7f8437448f62d401fa0aa25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wheelController: {fileID: 1029947246}
-  arduino: {fileID: 0}
-  maxVelocity: 50
->>>>>>> 7b65df24440c3db92bb81be3e2e9f06266f4100a
---- !u!1 &1859157074
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 1981758509493628, guid: 5732e7a4288f2184fb02313afc670562,
