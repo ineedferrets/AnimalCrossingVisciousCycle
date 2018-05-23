@@ -68,9 +68,9 @@ void loop() {
   int leftAValue = analogRead(leftAPin);
   int leftBValue = analogRead(leftBPin);
   
-  //Serial.print(leftAValue);
-  //Serial.print(" ");
-  //Serial.println(leftBValue);
+  Serial.print(leftAValue);
+  Serial.print(" ");
+  Serial.println(leftBValue);
 }
 
 // Calculate the angular velocity from the time taken.
