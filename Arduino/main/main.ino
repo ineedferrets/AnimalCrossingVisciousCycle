@@ -9,7 +9,7 @@ const int angBetweenSpokes = 15;
 const int velocityRefreshRate = 200;
 
 // Boundary between darkness and exposure to LED.
-const int lightBurstBoundary = 15;
+const int lightBurstBoundary = 10;
 
 // Left wheel counter of bursts.
 int leftCounter = 0;
@@ -54,9 +54,9 @@ void loop() {
   // If refresh time, calculate the amount of angle turned in deg/ms.
   if (currentTime >= (loopTime + velocityRefreshRate)) {
     int leftOutput = calculateAngularVelocity(leftCounter);
-    Serial.print("Counter: ");
-    Serial.println(leftCounter);
-    Serial.print("Velocity: ");
+    //Serial.print("Counter: ");
+    //Serial.println(leftCounter);
+    //Serial.print("Velocity: ");
     Serial.println(leftOutput);
     leftCounter = 0;
     loopTime = currentTime;
