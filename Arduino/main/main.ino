@@ -9,7 +9,7 @@ const int angBetweenSpokes = 15;
 const int velocityRefreshRate = 200;
 
 // Boundary between darkness and exposure to LED.
-const int lightBurstBoundary = 50;
+const int lightBurstBoundary = 15;
 
 // Left wheel counter of bursts.
 int leftCounter = 0;
@@ -68,9 +68,9 @@ void loop() {
   int leftAValue = analogRead(leftAPin);
   int leftBValue = analogRead(leftBPin);
   
-  /*Serial.print(leftAValue);
-  Serial.print(" ");
-  Serial.println(leftBValue);*/
+  //Serial.print(leftAValue);
+  //Serial.print(" ");
+  //Serial.println(leftBValue);
 }
 
 // Calculate the angular velocity from the time taken.
