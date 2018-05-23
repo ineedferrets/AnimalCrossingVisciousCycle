@@ -12,7 +12,7 @@ public class OpenArduino : MonoBehaviour {
         arduino.Open();
         StartCoroutine(
             arduino.AsynchronousReadFromArduino(
-                (string s) => Debug.Log(s),
+                (string s) => SendVelocityReading(s),
                 () => Debug.LogError("Error!"),
                 1000f
             )
@@ -21,5 +21,10 @@ public class OpenArduino : MonoBehaviour {
 
     private void OnApplicationQuit() {
         arduino.Close();
+    }
+
+    private void SendVelocityReading(string s) {
+        int velocity = int.Parse(s);
+        Debug.Log("Velocity as int: " + velocity);
     }
 }
