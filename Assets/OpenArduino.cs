@@ -28,11 +28,9 @@ public class OpenArduino : MonoBehaviour {
     }
 
     private void SendVelocityReading(string s) {
-        Debug.Log(s);
         int velocity = 0;
         velocity = int.Parse(s);
         wheelController.wheelInput = Mathf.Clamp( velocity / maxVelocity, -1f, 1f);
 
-        Debug.Log("Velocity as int: " + velocity);
     }
 }

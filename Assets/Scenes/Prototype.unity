@@ -366,7 +366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wheelController: {fileID: 1029947246}
   arduino: {fileID: 0}
-  maxVelocity: 20
+  maxVelocity: 50
 --- !u!1 &1859157074
 GameObject:
   m_ObjectHideFlags: 0
