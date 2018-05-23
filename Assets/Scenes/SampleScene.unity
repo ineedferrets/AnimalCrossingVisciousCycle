@@ -577,6 +577,7 @@ GameObject:
   - component: {fileID: 1187100550}
   - component: {fileID: 1187100549}
   - component: {fileID: 1187100552}
+  - component: {fileID: 1187100553}
   m_Layer: 5
   m_Name: Ping
   m_TagString: Untagged
@@ -641,7 +642,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1187100550}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1187100552}
+        m_MethodName: WriteToArduino
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: PING
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1187100550
@@ -688,8 +700,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f96fdbb547065f4faddea2b48aee76b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  port: COM8
+  port: COM2
   baudRate: 9600
+--- !u!114 &1187100553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1187100547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a6a08f0b7f8437448f62d401fa0aa25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arduino: {fileID: 0}
 --- !u!1 &1209940796
 GameObject:
   m_ObjectHideFlags: 0

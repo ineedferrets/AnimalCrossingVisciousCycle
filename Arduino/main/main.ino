@@ -1,34 +1,104 @@
-#include <SoftwareSerial.h>
-#include "SerialCommand.h"
+#include <SerialCommand.h>
+
 SerialCommand sCmd;
 
-float leftWheelAngVel;
-float rightWheelAngVel;
+// Angle between spokes in wheel.
+const int angBetweenSpokes = 15;
+
+// Refresh Rate of Velocity in Hz
+const int velocityRefreshRate = 200;
+
+// Boundary between darkness and exposure to LED.
+const int lightBurstBoundary = 15;
+
+// Left wheel counter of bursts.
+int leftCounter = 0;
+
+// Left wheel LRD A pin.
+const int leftAPin = A0;
+
+// Left wheel LRD B pin.
+const int leftBPin = A1;
+
+// Left wheel LRD A state.
+bool leftALastBurstState;
+
+// Time since last measurement of velocity.
+unsigned long loopTime;
+
+// Global time since start.
+unsigned long currentTime;
+
+// Method declarations.
+int calculateAngulerVelocity(int counter);
+int checkWheelChanges(int pinA, bool &lastBurstAState, int pinB);
+bool checkBurstState(int pin);
 
 void setup() {
-  // put your setup code here, to run once:
-  Serial.begin(9600);
-  while(!Serial);
+  pinMode(leftAPin, INPUT);
+  pinMode(leftBPin, INPUT);
+  
+  leftALastBurstState = checkBurstState(leftAPin);
 
-  sCmd.addCommand("PING", pingHandler);
-  sCmd.addCommand("REQUEST", requestHandler);
+  currentTime = millis();
+  loopTime = currentTime;
+  
+  Serial.begin(9600);
+  while (!Serial);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  if(Serial.available() > 0)
-    sCmd.readSerial();
-}
 
-void pingHandler()
-{
-  Serial.println("PONG");
-}
+  currentTime = millis();
 
-void requestHandler()
-{
-	String outputString = String(String(leftWheelAngVel) + " " + String(rightWheelAngVel));
+  // If refresh time, calculate the amount of angle turned in deg/ms.
+  if (currentTime >= (loopTime + velocityRefreshRate)) {
+    int leftOutput = calculateAngularVelocity(leftCounter);
+    Serial.print("Counter: ");
+    Serial.println(leftCounter);
+    Serial.print("Velocity: ");
+    Serial.println(leftOutput);
+    leftCounter = 0;
+    loopTime = currentTime;
+  } else {
+    // Update the counter for bursts.
+    leftCounter += checkWheelChanges(leftAPin, leftALastBurstState, leftBPin);
+  }
   
-	Serial.println(outputString);
+  int leftAValue = analogRead(leftAPin);
+  int leftBValue = analogRead(leftBPin);
+  
+  //Serial.print(leftAValue);
+  //Serial.print(" ");
+  //Serial.println(leftBValue);
 }
 
+// Calculate the angular velocity from the time taken.
+int calculateAngularVelocity(int counter) {
+  int timePassed = 1000/velocityRefreshRate;
+  return (counter * angBetweenSpokes) / timePassed;
+}
+
+// Return adjustment to wheel counter.
+int checkWheelChanges(int pinA, bool &lastABurstState, int pinB)
+{
+  bool aBurstState = checkBurstState(pinA);
+  if (aBurstState != lastABurstState) {
+    lastABurstState = aBurstState;
+    if (checkBurstState(pinB) != lastABurstState) {
+		  return 1;
+    } else {
+      return -1;
+    }
+  }
+  return 0;
+}
+
+// Check state of pin.
+bool checkBurstState(int pin) {
+  if (analogRead(pin) > lightBurstBoundary)
+  {
+    return true;
+  }
+  return false;
+}
