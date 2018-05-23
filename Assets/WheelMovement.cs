@@ -7,10 +7,10 @@ public class WheelMovement : MonoBehaviour
     public Transform[] wheels;
 
     public Rigidbody leftWheelRigidBody;
-    public Rigidbody rightWheelRigidBody;
+    //public Rigidbody rightWheelRigidBody;
     public float maximumVelocity = 200.0f;
     private float leftWheelController;
-    private float rightWheelController;
+    //private float rightWheelController;
 
     void Start()
     {
@@ -21,10 +21,10 @@ public class WheelMovement : MonoBehaviour
     void FixedUpdate()
     {
         leftWheelController = Input.GetAxis("Vertical") * Time.deltaTime * 300.0f;
-        rightWheelController = Input.GetAxis("Vertical2") * Time.deltaTime * 300.0f;
+        //rightWheelController = Input.GetAxis("Vertical2") * Time.deltaTime * 300.0f;
 
         leftWheelRigidBody.AddForce(transform.forward * leftWheelController);
-        rightWheelRigidBody.AddForce(transform.forward * rightWheelController);
+        //rightWheelRigidBody.AddForce(transform.forward * rightWheelController);
 
         /*leftWheelRigidBody.angularVelocity = (transform.right * leftWheelController);
         rightWheelRigidBody.angularVelocity = (transform.right * rightWheelController);*/
