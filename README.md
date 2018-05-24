@@ -18,6 +18,12 @@ The design of the prototype consisted in two parts: manufacturing the wheel and 
 
 ### Game
 
+## Videos
+
+Physical Demo: https://photos.app.goo.gl/RB6864WTT6dOkIVf2
+
+Ingame Footage: https://photos.app.goo.gl/YozhvxnUrSaD1uxGA
+
 ## To Do
 
 
