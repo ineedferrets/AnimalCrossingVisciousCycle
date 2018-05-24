@@ -31,6 +31,5 @@ public class OpenArduino : MonoBehaviour {
         int velocity = 0;
         velocity = int.Parse(s);
         wheelController.wheelInput = Mathf.Clamp( velocity / maxVelocity, -1f, 1f);
-
     }
 }

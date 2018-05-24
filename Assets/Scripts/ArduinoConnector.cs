@@ -11,6 +11,7 @@ public class ArduinoConnector : MonoBehaviour {
     private SerialPort stream;
 
     public void Open() {
+
         stream = new SerialPort(port, baudRate);
         stream.ReadTimeout = 50;
         stream.Open();

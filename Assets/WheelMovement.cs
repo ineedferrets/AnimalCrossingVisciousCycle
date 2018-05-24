@@ -5,6 +5,8 @@ public class WheelMovement : MonoBehaviour
 {
     public Transform[] wheels;
 
+    public bool usingWheel = true;
+
     public Rigidbody leftWheelRigidBody;
     //public Rigidbody rightWheelRigidBody;
     public float maximumVelocity = 200.0f;
@@ -21,7 +23,10 @@ public class WheelMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        leftWheelController = wheelInput * Time.deltaTime * 300.0f;
+        if (usingWheel)
+            leftWheelController = wheelInput * Time.deltaTime * 300.0f;
+        else
+            leftWheelController = -Input.GetAxis("Vertical") * Time.deltaTime * 300.0f;
         //rightWheelController = Input.GetAxis("Vertical2") * Time.deltaTime * 300.0f;
 
         leftWheelRigidBody.AddForce(transform.forward * leftWheelController);
