@@ -9,7 +9,7 @@ const int angBetweenSpokes = 15;
 const int velocityRefreshRate = 200;
 
 // Boundary between darkness and exposure to LED.
-const int lightBurstBoundary = 10;
+const int lightBurstBoundary = 30;
 
 // Left wheel counter of bursts.
 int leftCounter = 0;
