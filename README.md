@@ -2,6 +2,7 @@
 Developed by Joseph Hesketh and Cristiana Pacheco
 
 ## Overview
+Write stuff here! :D
 
 ## To Do
 Here are things to do before hand in:
