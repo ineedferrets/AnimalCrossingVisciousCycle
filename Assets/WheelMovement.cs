@@ -3,10 +3,6 @@ using System.Collections;
 
 public class WheelMovement : MonoBehaviour
 {
-    public bool ressurect;
-    private Vector3 initPos;
-    private Quaternion initRot;
-
     public Transform[] wheels;
 
     public Rigidbody leftWheelRigidBody;
@@ -19,21 +15,9 @@ public class WheelMovement : MonoBehaviour
 
     void Start()
     {
-        ressurect = false;
-        initPos = transform.position;
-        initRot = transform.rotation;
         leftWheelController = 0;
     }
 
-    void Update()
-    {
-        if (ressurect)
-        {
-            transform.position = initPos;
-            transform.rotation = initRot;
-            ressurect = false;
-        }
-    }
 
     void FixedUpdate()
     {
