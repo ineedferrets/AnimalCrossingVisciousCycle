@@ -1404,8 +1404,8 @@ MonoBehaviour:
   - {fileID: 1956766190551672, guid: ec140ceddd5aaf546840c298e1992d7d, type: 2}
   - {fileID: 1770010661545112, guid: f2c9c5e833e7fb0498dbadc011cd3ebb, type: 2}
   - {fileID: 1339130941189694, guid: d93b2b78202fbbb49a47dbfe889671f8, type: 2}
-  maxTimeToSpawn: 1.4
-  minTimeToSpawn: 0.6
+  maxTimeToSpawn: 1.8
+  minTimeToSpawn: 1.4
 --- !u!4 &204030605
 Transform:
   m_ObjectHideFlags: 0
@@ -2933,8 +2933,8 @@ MonoBehaviour:
   - {fileID: 1956766190551672, guid: ec140ceddd5aaf546840c298e1992d7d, type: 2}
   - {fileID: 1770010661545112, guid: f2c9c5e833e7fb0498dbadc011cd3ebb, type: 2}
   - {fileID: 1339130941189694, guid: d93b2b78202fbbb49a47dbfe889671f8, type: 2}
-  maxTimeToSpawn: 1.4
-  minTimeToSpawn: 0.6
+  maxTimeToSpawn: 1.8
+  minTimeToSpawn: 1.4
 --- !u!4 &429951914
 Transform:
   m_ObjectHideFlags: 0
@@ -3055,8 +3055,8 @@ MonoBehaviour:
   - {fileID: 1956766190551672, guid: ec140ceddd5aaf546840c298e1992d7d, type: 2}
   - {fileID: 1770010661545112, guid: f2c9c5e833e7fb0498dbadc011cd3ebb, type: 2}
   - {fileID: 1339130941189694, guid: d93b2b78202fbbb49a47dbfe889671f8, type: 2}
-  maxTimeToSpawn: 1.4
-  minTimeToSpawn: 0.6
+  maxTimeToSpawn: 1.8
+  minTimeToSpawn: 1.4
 --- !u!4 &454525483
 Transform:
   m_ObjectHideFlags: 0
@@ -5270,8 +5270,8 @@ MonoBehaviour:
   - {fileID: 1956766190551672, guid: ec140ceddd5aaf546840c298e1992d7d, type: 2}
   - {fileID: 1770010661545112, guid: f2c9c5e833e7fb0498dbadc011cd3ebb, type: 2}
   - {fileID: 1339130941189694, guid: d93b2b78202fbbb49a47dbfe889671f8, type: 2}
-  maxTimeToSpawn: 1.4
-  minTimeToSpawn: 0.6
+  maxTimeToSpawn: 1.8
+  minTimeToSpawn: 1.4
 --- !u!4 &904904448
 Transform:
   m_ObjectHideFlags: 0
@@ -8419,8 +8419,8 @@ MonoBehaviour:
   - {fileID: 1956766190551672, guid: ec140ceddd5aaf546840c298e1992d7d, type: 2}
   - {fileID: 1770010661545112, guid: f2c9c5e833e7fb0498dbadc011cd3ebb, type: 2}
   - {fileID: 1339130941189694, guid: d93b2b78202fbbb49a47dbfe889671f8, type: 2}
-  maxTimeToSpawn: 1.4
-  minTimeToSpawn: 0.6
+  maxTimeToSpawn: 1.8
+  minTimeToSpawn: 1.4
 --- !u!4 &1443988713
 Transform:
   m_ObjectHideFlags: 0
