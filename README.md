@@ -10,9 +10,11 @@ This project aims to provide a proof of concept: representing a wheelchair in a 
 ## Implementation 
 
 
+## Demo Video
+Physical Demo: https://photos.app.goo.gl/RB6864WTT6dOkIVf2
+Ingame Footage: https://photos.app.goo.gl/YozhvxnUrSaD1uxGA
+
 ## To Do
-
-
 Here are things to do on the project in general:
 - Add a second wheel in the Arduino code.
 - Create a physics based wheelchair in Unity.
