@@ -18,7 +18,7 @@ public class AnimalMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Physics.IgnoreLayerCollision(7, 10);
+        Physics.IgnoreLayerCollision(9, 9, true);
         this.GetComponent<Rigidbody>().velocity = transform.forward * Random.RandomRange(minLinearVelocity, maxLinearVelocity);
         this.GetComponent<Rigidbody>().angularVelocity = new Vector3(Random.RandomRange(-1.0f, 1.0f), 
             Random.RandomRange(-1.0f, 1.0f), 
