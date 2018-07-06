@@ -1404,8 +1404,8 @@ MonoBehaviour:
   - {fileID: 1956766190551672, guid: ec140ceddd5aaf546840c298e1992d7d, type: 2}
   - {fileID: 1770010661545112, guid: f2c9c5e833e7fb0498dbadc011cd3ebb, type: 2}
   - {fileID: 1339130941189694, guid: d93b2b78202fbbb49a47dbfe889671f8, type: 2}
-  maxTimeToSpawn: 1.8
-  minTimeToSpawn: 1.4
+  maxTimeToSpawn: 1.4
+  minTimeToSpawn: 0.8
 --- !u!4 &204030605
 Transform:
   m_ObjectHideFlags: 0
@@ -1413,7 +1413,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 204030603}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 9.972216, y: 1.473905, z: -12.186272}
+  m_LocalPosition: {x: 27, y: 1.473905, z: -12.186272}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1573125409}
@@ -2933,8 +2933,8 @@ MonoBehaviour:
   - {fileID: 1956766190551672, guid: ec140ceddd5aaf546840c298e1992d7d, type: 2}
   - {fileID: 1770010661545112, guid: f2c9c5e833e7fb0498dbadc011cd3ebb, type: 2}
   - {fileID: 1339130941189694, guid: d93b2b78202fbbb49a47dbfe889671f8, type: 2}
-  maxTimeToSpawn: 1.8
-  minTimeToSpawn: 1.4
+  maxTimeToSpawn: 1.4
+  minTimeToSpawn: 0.8
 --- !u!4 &429951914
 Transform:
   m_ObjectHideFlags: 0
@@ -2942,7 +2942,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 429951912}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -10.557784, y: 1.473905, z: -8.276272}
+  m_LocalPosition: {x: -25.6, y: 1.473905, z: -8.276272}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1573125409}
@@ -3055,8 +3055,8 @@ MonoBehaviour:
   - {fileID: 1956766190551672, guid: ec140ceddd5aaf546840c298e1992d7d, type: 2}
   - {fileID: 1770010661545112, guid: f2c9c5e833e7fb0498dbadc011cd3ebb, type: 2}
   - {fileID: 1339130941189694, guid: d93b2b78202fbbb49a47dbfe889671f8, type: 2}
-  maxTimeToSpawn: 1.8
-  minTimeToSpawn: 1.4
+  maxTimeToSpawn: 1.4
+  minTimeToSpawn: 0.8
 --- !u!4 &454525483
 Transform:
   m_ObjectHideFlags: 0
@@ -3064,7 +3064,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 454525481}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 9.812216, y: 1.473905, z: -23.676271}
+  m_LocalPosition: {x: 16.71, y: 13.08, z: -23.676271}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1573125409}
@@ -5270,8 +5270,8 @@ MonoBehaviour:
   - {fileID: 1956766190551672, guid: ec140ceddd5aaf546840c298e1992d7d, type: 2}
   - {fileID: 1770010661545112, guid: f2c9c5e833e7fb0498dbadc011cd3ebb, type: 2}
   - {fileID: 1339130941189694, guid: d93b2b78202fbbb49a47dbfe889671f8, type: 2}
-  maxTimeToSpawn: 1.8
-  minTimeToSpawn: 1.4
+  maxTimeToSpawn: 1.4
+  minTimeToSpawn: 0.8
 --- !u!4 &904904448
 Transform:
   m_ObjectHideFlags: 0
@@ -5279,7 +5279,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 904904446}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -10.677785, y: 1.473905, z: -17.316273}
+  m_LocalPosition: {x: -23.7, y: 1.473905, z: -17.316273}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1573125409}
@@ -5729,9 +5729,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheels: []
-  usingWheel: 0
+  usingWheel: 1
   leftWheelRigidBody: {fileID: 2147018623}
-  maximumVelocity: 400
+  maximumVelocity: 800
   wheelInput: 0
 --- !u!4 &1029947247
 Transform:
@@ -8419,8 +8419,8 @@ MonoBehaviour:
   - {fileID: 1956766190551672, guid: ec140ceddd5aaf546840c298e1992d7d, type: 2}
   - {fileID: 1770010661545112, guid: f2c9c5e833e7fb0498dbadc011cd3ebb, type: 2}
   - {fileID: 1339130941189694, guid: d93b2b78202fbbb49a47dbfe889671f8, type: 2}
-  maxTimeToSpawn: 1.8
-  minTimeToSpawn: 1.4
+  maxTimeToSpawn: 1.4
+  minTimeToSpawn: 0.8
 --- !u!4 &1443988713
 Transform:
   m_ObjectHideFlags: 0
@@ -8428,7 +8428,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1443988711}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 9.212215, y: 1.473905, z: -4.6862717}
+  m_LocalPosition: {x: 25.7, y: 1.473905, z: -4.6862717}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1573125409}
