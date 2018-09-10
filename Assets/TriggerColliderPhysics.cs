@@ -16,7 +16,7 @@ public class TriggerColliderPhysics : MonoBehaviour {
     {
         if (other.gameObject.tag == "Floor")
         {
-            gameController.GetComponent<GameController>().dead = true;
+            gameController.GetComponent<GameController>().PlayerLose();
         } else if (other.gameObject.tag == "Finish") {
             gameController.GetComponent<GameController>().PlayerWin();
         }

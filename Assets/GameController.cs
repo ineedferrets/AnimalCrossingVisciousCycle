@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
-    public bool dead;
     public GameObject player;
 
     public Button restartBut;
@@ -15,9 +14,11 @@ public class GameController : MonoBehaviour {
     public Image youFellIm;
     public Image youSurvivedIm;
 
+    public AudioSource[] winAudioSources;
+    public AudioSource[] loseAudioSources;
+
 	// Use this for initialization
 	void Start () {
-        dead = false;
         restartBut.gameObject.SetActive(false);
         quitBut.gameObject.SetActive(false);
         youFellIm.gameObject.SetActive(false);
@@ -26,13 +27,6 @@ public class GameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (dead && !youSurvivedIm.gameObject.activeInHierarchy)
-        {
-            youFellIm.gameObject.SetActive(true);
-            //show buttons
-            restartBut.gameObject.SetActive(true);
-            quitBut.gameObject.SetActive(true);
-        }
 	}
 
     public void Restart()
@@ -41,7 +35,33 @@ public class GameController : MonoBehaviour {
     }
 
     public void PlayerWin() {
+        if (winAudioSources != null)
+        {
+            foreach (AudioSource audioSource in winAudioSources)
+            {
+                audioSource.Play();
+            }
+        }
         youSurvivedIm.gameObject.SetActive(true);
+        ShowMenuButtons();
+    }
+
+    public void PlayerLose()
+    {
+        if (loseAudioSources != null)
+        {
+            foreach (AudioSource audioSource in loseAudioSources)
+            {
+                audioSource.Play();
+            }
+        }
+
+        youFellIm.gameObject.SetActive(true);
+        ShowMenuButtons();
+    }
+
+    private void ShowMenuButtons()
+    {
         restartBut.gameObject.SetActive(true);
         quitBut.gameObject.SetActive(true);
     }
@@ -51,5 +71,6 @@ public class GameController : MonoBehaviour {
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #endif
+        
     }
 }
