@@ -18,6 +18,7 @@ public class SpawnObject : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         ResetTimer();
+
 	}
 	
 	// Update is called once per frame

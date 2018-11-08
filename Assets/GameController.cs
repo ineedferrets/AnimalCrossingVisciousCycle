@@ -14,8 +14,16 @@ public class GameController : MonoBehaviour {
     public Image youFellIm;
     public Image youSurvivedIm;
 
+    public Image readyIm;
+    public AudioSource readySound;
+    public Image goIm;
+    public AudioSource goSound;
+
     public AudioSource[] winAudioSources;
     public AudioSource[] loseAudioSources;
+
+    public bool dead = false;
+    public bool win = false;
 
 	// Use this for initialization
 	void Start () {
@@ -23,10 +31,48 @@ public class GameController : MonoBehaviour {
         quitBut.gameObject.SetActive(false);
         youFellIm.gameObject.SetActive(false);
         youSurvivedIm.gameObject.SetActive(false);
+        goIm.gameObject.SetActive(false);
+
+        player.GetComponent<WheelMovement>().allowInput = false;
     }
-	
+
+    private float readyGoTimer = 0f;
+
+    public float readyTime = 1f;
+    private bool readySoundPlayed;
+    public float goTime = 1f;
+    private bool goSoundPlayed;
+
 	// Update is called once per frame
 	void Update () {
+        if (readyGoTimer <= readyTime)
+        {
+            readyGoTimer += Time.deltaTime;
+            if (!readySoundPlayed)
+            {
+                readySound.Play();
+                readySoundPlayed = true;
+            }
+        }
+        else if (readyGoTimer <= goTime + readyTime && readyGoTimer > readyTime)
+        {
+            readyGoTimer += Time.deltaTime;
+            readyIm.gameObject.SetActive(false);
+            goIm.gameObject.SetActive(true);
+
+            if (!goSoundPlayed)
+            {
+                goSound.Play();
+                goSoundPlayed = true;
+            }
+
+            player.GetComponent<WheelMovement>().allowInput = true;
+        }
+        else if (readyGoTimer > goTime && goIm.gameObject.activeInHierarchy)
+        {
+            readyGoTimer += Time.deltaTime;
+            goIm.gameObject.SetActive(false);
+        }
 	}
 
     public void Restart()
@@ -35,29 +81,39 @@ public class GameController : MonoBehaviour {
     }
 
     public void PlayerWin() {
-        if (winAudioSources != null)
+        if (win == false)
         {
-            foreach (AudioSource audioSource in winAudioSources)
+            win = true;
+            if (winAudioSources != null)
             {
-                audioSource.Play();
+                foreach (AudioSource audioSource in winAudioSources)
+                {
+                    audioSource.Play();
+                }
             }
+            youSurvivedIm.gameObject.SetActive(true);
+            ShowMenuButtons();
         }
-        youSurvivedIm.gameObject.SetActive(true);
-        ShowMenuButtons();
+
     }
 
     public void PlayerLose()
     {
-        if (loseAudioSources != null)
+        if (dead == false && win == false)
         {
-            foreach (AudioSource audioSource in loseAudioSources)
-            {
-                audioSource.Play();
-            }
-        }
+            dead = true;
 
-        youFellIm.gameObject.SetActive(true);
-        ShowMenuButtons();
+            if (loseAudioSources != null)
+            {
+                foreach (AudioSource audioSource in loseAudioSources)
+                {
+                    audioSource.Play();
+                }
+            }
+
+            youFellIm.gameObject.SetActive(true);
+            ShowMenuButtons();
+        }
     }
 
     private void ShowMenuButtons()

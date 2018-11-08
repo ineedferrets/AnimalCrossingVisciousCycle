@@ -1,4 +1,4 @@
-#include <SerialCommand.h>
+#include "SerialCommand.h"
 
 SerialCommand sCmd;
 
@@ -9,7 +9,7 @@ const int angBetweenSpokes = 15;
 const int velocityRefreshRate = 200;
 
 // Boundary between darkness and exposure to LED.
-const int lightBurstBoundary = 12;
+const int lightBurstBoundary = 60;
 
 // Left wheel counter of bursts.
 int leftCounter = 0;
