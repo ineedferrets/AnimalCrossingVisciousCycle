@@ -30,8 +30,6 @@ Physical Demo: https://photos.app.goo.gl/RB6864WTT6dOkIVf2
 Ingame Footage: https://photos.app.goo.gl/DaLJlCaraAhgu4i13
 
 ## Credits
-**Cristiana Pacheco**
-Gameplay programming
+**Cristiana Pacheco** - Gameplay programming
 
-**Joseph Hesketh**
-Wheel Design and Fabrication, Controller programming, Additional Gameplay Programming
+**Joseph Hesketh** - Wheel Design and Fabrication, Controller programming, Additional Gameplay Programming
